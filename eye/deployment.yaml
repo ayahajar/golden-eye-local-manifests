@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golden-eye-local
+  labels:
+    app: golden-eye-local
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golden-eye-local
+  template:
+    metadata:
+      labels:
+        app: golden-eye-local
+    spec:
+      containers:
+        - name: golden-eye-local
+          image: ayahajarhub/golden-eye-local:latest
+          ports:
+            - containerPort: 9090

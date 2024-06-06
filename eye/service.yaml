@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: golden-eye-local
+spec:
+  selector:
+    app: golden-eye-local
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090
